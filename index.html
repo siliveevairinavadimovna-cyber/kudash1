@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.5.9"></script>
+    <title>Плашка Анатолия Шустова — ЗС ГО</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: transparent;
+            padding: 10px 0;
+        }
+
+        .expert-typing-block-9 {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .expert-photo-wrap-9 {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #f1f5f9;
+            border: 2px solid #f39237; /* Оранжевый акцент */
+        }
+
+        .expert-photo-wrap-9 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .expert-text-wrap-9 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #1e293b;
+            font-weight: 400;
+            /* Минимальная высота, чтобы верстка не прыгала при перезапуске анимации */
+            min-height: 180px; 
+            flex-grow: 1;
+            white-space: pre-wrap; /* Чтобы сохранялись переносы строк */
+        }
+
+        .typing-cursor-9 {
+            color: #f39237;
+            font-weight: 700;
+            animation: blink-9 0.7s infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink-9 {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .expert-typing-block-9 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+                padding: 20px;
+            }
+            
+            .expert-text-wrap-9 {
+                min-height: 380px; 
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="expert-typing-block-9">
+    <div class="expert-photo-wrap-9">
+        <img src="anatoly.jpg" alt="Анатолий Шустов">
+    </div>
+    <div class="expert-text-wrap-9">
+        <span id="typing-field-9"></span><span class="typing-cursor-9">|</span>
+    </div>
+</div>
+
+<script>
+    const textToType9 = "Ниже — видеотур, который подготовил я, Анатолий Шустов. Я пригласил редакцию Актиона в действующее образцовое убежище. В самом ролике мы детально показываем ключевые элементы и помещения ЗС ГО. Обратите внимание на то, как распределено это пространство и как функционирует система фильтровентиляции. Это поможет вам сопоставить увиденный стандарт безопасности с геометрией и оснащением собственных ЗСГО или подвальных помещений на предприятии.\n\nПеред тем как мы спустимся в сооружение, вас встретит Ирина Павлова, главный редактор Высшей школы Охраны труда. Используйте этот видеоролик как наглядный эталон для подготовки собственных укрытий к любым проверкам ведомств.";
+    
+    let charIndex9 = 0;
+    const typingSpeed9 = 15; 
+    const readPause9 = 10000; // 10 секунд на чтение финала
+    
+    const textField9 = document.getElementById('typing-field-9');
+
+    function startTyping9() {
+        if (charIndex9 < textToType9.length) {
+            textField9.textContent += textToType9.charAt(charIndex9);
+            charIndex9++;
+            setTimeout(startTyping9, typingSpeed9);
+        } else {
+            setTimeout(() => {
+                textField9.textContent = '';
+                charIndex9 = 0;
+                startTyping9();
+            }, readPause9);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', startTyping9);
+</script>
+
+</body>
+</html>
