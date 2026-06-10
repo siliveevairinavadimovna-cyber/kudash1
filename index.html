@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.5.9"></script>
+    <title>Плашка Евгения Кудашева — Тактический водораздел</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: transparent;
+            padding: 10px 0;
+        }
+
+        .expert-typing-block-10 {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .expert-photo-wrap-10 {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #f1f5f9;
+            border: 2px solid #0284c7; /* Синий акцент для Кудашева */
+        }
+
+        .expert-photo-wrap-10 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .expert-text-wrap-10 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #1e293b;
+            font-weight: 400;
+            min-height: 240px; 
+            flex-grow: 1;
+            white-space: pre-wrap;
+        }
+
+        .typing-cursor-10 {
+            color: #0284c7;
+            font-weight: 700;
+            animation: blink-10 0.7s infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink-10 {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .expert-typing-block-10 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+                padding: 20px;
+            }
+            
+            .expert-text-wrap-10 {
+                min-height: 520px; 
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="expert-typing-block-10">
+    <div class="expert-photo-wrap-10">
+        <img src="kudashev.jpg" alt="Евгений Кудашев">
+    </div>
+    <div class="expert-text-wrap-10">
+        <span id="typing-field-10"></span><span class="typing-cursor-10">|</span>
+    </div>
+</div>
+
+<script>
+    const textToType10 = "Чтобы не допустить роковой ошибки при проектировании инструкций, вам как специалисту по АТЗ необходимо четко разделять алгоритмы спасения людей в зависимости от характера угрозы:\n\nЕсли опасность исходит от живой силы: нападение стрелков, прорыв террористов на объект — направлять персонал в подвалы и глухие ЗС ГО запрещено. Здесь строго действует базовое правило антитеррора: эвакуация наружу или баррикадирование в кабинетах.\n\nНо если угроза носит технический, дистанционный характер — логика действий меняется на противоположную, так как обычные офисные помещения со стеклянными фасадами не защитят от взрывной волны.\n\nВ случае теракта направляйте работников в укрытие, только если маршрут безопасен и вы не можете эвакуировать их из здания. Таких ситуаций две: здание атаковал беспилотник и существует опасность повторной атаки или вы получили от экстренных служб сообщение об опасности взрыва большой мощности. В этих случаях правильным решением будет дойти до укрытия и ждать сигнала экстренных служб.";
+    
+    let charIndex10 = 0;
+    const typingSpeed10 = 12; 
+    const readPause10 = 12000; 
+    
+    const textField10 = document.getElementById('typing-field-10');
+
+    function startTyping10() {
+        if (charIndex10 < textToType10.length) {
+            textField10.textContent += textToType10.charAt(charIndex10);
+            charIndex10++;
+            setTimeout(startTyping10, typingSpeed10);
+        } else {
+            setTimeout(() => {
+                textField10.textContent = '';
+                charIndex10 = 0;
+                startTyping10();
+            }, readPause10);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', startTyping10);
+</script>
+
+</body>
+</html>
